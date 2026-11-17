@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#141E42">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Masuk · Motion Course</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1286,7 +1286,7 @@ html,body{overscroll-behavior-y:none}
    dengan password tetap per produk. Pembeli tetap mengetik email biasanya; password tidak bisa diubah dari sini.
    KONFIG diisi lms/bangun.py. Kunci Supabase di sini adalah kunci publik (publishable), memang boleh terlihat. */
 (function () {
-  const C = {"supabase": "https://evnrxjfwltduwehiktrg.supabase.co", "kunci": "sb_publishable_vJPqeH8eC5iqrOs2YStK-w_LBj2QOfV", "bantuan": "Lupa password? Lihat lagi email akses kamu, atau DM Instagram <a href=\"https://instagram.com/motionformat\" target=\"_blank\" rel=\"noopener\">@motionformat</a>.", "brand": "motionformat", "produk": "motion-course", "namaKelas": "Motion Course", "kunciLms": "mf-lms-v1", "tingkatan": [{"min": 1, "paket": "mandiri"}, {"min": 2, "paket": "kreator", "folder": "motion-course-t2"}], "ikon": "<link rel=\"icon\" href=\"/favicon-32.png\" sizes=\"32x32\" type=\"image/png\"><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">", "ui": {"kartu": "#gKartu", "input": "input", "label": "lb", "tombol": "btn sun block", "ket": "small muted", "bungkus": true}};
+  const C = {"supabase": "https://evnrxjfwltduwehiktrg.supabase.co", "kunci": "sb_publishable_vJPqeH8eC5iqrOs2YStK-w_LBj2QOfV", "bantuan": "Lupa password? Lihat lagi email akses kamu, atau DM Instagram <a href=\"https://instagram.com/motionformat\" target=\"_blank\" rel=\"noopener\">@motionformat</a>.", "brand": "motionformat", "produk": "motion-course", "namaKelas": "Motion Course", "kunciLms": "mf-lms-v1", "tingkatan": [{"min": 1, "paket": "mandiri"}, {"min": 2, "paket": "kreator", "folder": "motion-course-t2"}], "ikon": "<link rel=\"icon\" href=\"favicon-32.png\" sizes=\"32x32\" type=\"image/png\"><link rel=\"icon\" href=\"favicon.svg\" type=\"image/svg+xml\"><link rel=\"apple-touch-icon\" href=\"apple-touch-icon.png\">", "ui": {"kartu": "#gKartu", "input": "input", "label": "lb", "tombol": "btn sun block", "ket": "small muted", "bungkus": true}};
   // Sesi disimpan per produk. SESI_LAMA = kunci sebelum 10 Okt 2026 (satu akun untuk semua kelas); masih dibaca supaya
   // yang sedang masuk tidak terlempar keluar.
   const SESI = 'kelas-sesi:' + C.produk, SESI_LAMA = 'kelas-sesi';
