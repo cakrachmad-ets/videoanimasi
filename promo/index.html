@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1d1440">
+<title>Ramuan Animasi AI · Kelas Pendampingan Virtual</title>
+<meta name="description" content="Bikin video animasi cuma 3 langkah: Ramuan, Prompt, Tunggu. Rp199.000 sekali bayar, akses seumur hidup + grup pendampingan.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cakrachmad-ets.github.io/videoanimasi/promo/">
+<meta property="og:title" content="Nggak bisa ngedit? Bikin video animasi cuma 3 langkah">
+<meta property="og:description" content="Lihat 10 contoh video animasi hasil ramuan AI. Rp199.000 · akses seumur hidup + grup pendampingan.">
+<meta property="og:image" content="https://cakrachmad-ets.github.io/videoanimasi/promo/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../kelas/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../kelas/apple-touch-icon.png">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a night-time potion lab. Hero = promo video in a phone frame beside the pitch;
+   three-step recipe strip; gallery of rendered results as vertical "phone" cards; closing CTA. */
+:root {
+  --night: #1d1440;      /* page ground, from the promo's wizard room */
+  --night-2: #2a1d5c;    /* raised panels */
+  --night-3: #3a2a7a;    /* borders, chips */
+  --ink: #f6f1ff;        /* main text */
+  --mist: #c3b6ea;       /* secondary text */
+  --potion: #b8f25a;     /* the brew: primary accent */
+  --amber: #ffc94a;      /* candle light: highlights */
+  --coral: #ff7a59;      /* promo stamp */
+  --f-display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --f-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--night);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--night);
+}
+.wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--f-display); line-height: 1.05; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--potion);
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 8px; }
+
+/* ---------- stars backdrop ---------- */
+.sky {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(1.5px 1.5px at 12% 18%, var(--mist) 50%, transparent 51%),
+    radial-gradient(1px 1px at 78% 12%, var(--ink) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 64% 42%, var(--mist) 50%, transparent 51%),
+    radial-gradient(1px 1px at 30% 70%, var(--ink) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 90% 80%, var(--mist) 50%, transparent 51%),
+    radial-gradient(1px 1px at 45% 8%, var(--ink) 50%, transparent 51%),
+    radial-gradient(60% 50% at 85% 0%, color-mix(in srgb, var(--night-3) 70%, transparent), transparent 70%);
+  opacity: .55;
+}
+main, header, footer { position: relative; z-index: 1; }
+
+/* ---------- top bar ---------- */
+.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-block: 18px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 800; font-size: 20px; }
+.brand svg { flex: none; }
+.top .mini-cta {
+  font-weight: 700; font-size: 14px; text-decoration: none;
+  padding: 8px 14px; border-radius: 999px; border: 2px solid var(--potion); color: var(--potion);
+  white-space: nowrap;
+}
+.top .mini-cta:hover { background: var(--potion); color: var(--night); }
+
+/* ---------- hero ---------- */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 48px; align-items: center;
+  padding-block: 28px 56px;
+}
+.hero-copy { display: grid; gap: 20px; min-width: 0; }
+.hero h1 { font-size: clamp(40px, 6.4vw, 72px); font-weight: 800; letter-spacing: -.01em; line-height: 1.14; }
+.hero h1 .brew {
+  color: var(--night); background: var(--potion); padding: 0 .18em; border-radius: .18em;
+  box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+.hero h1 .glow { color: var(--amber); }
+.lede { font-size: 18px; color: var(--mist); max-width: 34em; }
+.lede strong { color: var(--ink); }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; justify-content: center;
+  font-family: var(--f-display); font-weight: 800; font-size: 20px; line-height: 1;
+  padding: 16px 26px 14px; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer;
+  background: var(--potion); color: var(--night);
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--potion) 45%, var(--night));
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 0 color-mix(in srgb, var(--potion) 45%, var(--night)); }
+.btn:active { transform: translateY(4px); box-shadow: 0 2px 0 color-mix(in srgb, var(--potion) 45%, var(--night)); }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--night-3); }
+.btn.ghost:hover { box-shadow: inset 0 0 0 2px var(--mist); }
+
+.phone {
+  position: relative; width: min(100%, 340px); justify-self: center;
+  padding: 10px; border-radius: 34px; background: #0e0a22;
+  box-shadow: 0 0 0 2px var(--night-3), 0 30px 80px -20px color-mix(in srgb, var(--potion) 35%, transparent);
+}
+.phone video { display: block; width: 100%; aspect-ratio: 9 / 16; max-width: 100%; border-radius: 26px; background: #0e0a22; object-fit: cover; }
+.stamp {
+  position: absolute; top: 18px; right: -14px; z-index: 2;
+  font-family: var(--f-display); font-weight: 800; font-size: 15px; letter-spacing: .06em;
+  color: var(--ink); background: var(--coral); padding: 6px 12px 4px; border-radius: 8px; transform: rotate(8deg);
+  box-shadow: 0 6px 18px -6px var(--coral);
+}
+.vid-label { margin-top: 12px; text-align: center; font-size: 13px; color: var(--mist); }
+.vid-label b { color: var(--ink); }
+
+/* ---------- recipe steps ---------- */
+.recipe {
+  border-radius: 28px; background: var(--night-2); border: 1px solid var(--night-3);
+  padding-block: 32px; padding-inline: clamp(18px, 4vw, 40px);
+  display: grid; gap: 24px;
+}
+.recipe h2 { font-size: clamp(28px, 4vw, 40px); }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.steps li { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; min-width: 0; }
+.steps .n {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--f-display); font-weight: 800; font-size: 22px; padding-top: 3px;
+  background: var(--amber); color: var(--night);
+}
+.steps h3 { font-size: 24px; }
+.steps p { color: var(--mist); font-size: 15px; }
+
+/* ---------- gallery ---------- */
+.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px 24px; margin-bottom: 28px; }
+.section-head h2 { font-size: clamp(32px, 5vw, 52px); }
+.section-head p { color: var(--mist); max-width: 30em; }
+.gallery { padding-block: 72px 24px; }
+.grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px;
+}
+.card { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.card.wide { grid-column: 1 / -1; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 24px; align-items: center; }
+.card.wide h3 { font-size: 30px; }
+.card.wide p { font-size: 16px; }
+.screen {
+  position: relative; border-radius: 20px; overflow: hidden; background: #0e0a22;
+  box-shadow: 0 0 0 1px var(--night-3);
+}
+.screen video { display: block; width: 100%; aspect-ratio: 9 / 16; max-width: 100%; object-fit: cover; background: #0e0a22; }
+.card.wide .screen video { aspect-ratio: 16 / 9; }
+.card.wide .wide-fill { display: grid; gap: 12px; }
+.play {
+  position: absolute; inset: 0; display: grid; place-items: center; border: 0; padding: 0; cursor: pointer;
+  background: linear-gradient(to top, color-mix(in srgb, #0e0a22 70%, transparent), transparent 45%);
+  color: var(--night);
+}
+.play span {
+  width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--potion); box-shadow: 0 0 0 8px color-mix(in srgb, var(--potion) 25%, transparent);
+  transition: transform .15s ease;
+}
+.play:hover span { transform: scale(1.08); }
+.play .dur {
+  position: absolute; right: 10px; bottom: 10px; font-size: 12px; font-weight: 700; color: var(--ink);
+  background: color-mix(in srgb, #0e0a22 75%, transparent); padding: 2px 8px; border-radius: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.screen.playing .play { display: none; }
+.meta { display: grid; gap: 6px; }
+.chip {
+  justify-self: start; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--amber); border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent);
+  padding: 2px 8px; border-radius: 999px;
+}
+.card h3 { font-size: 21px; font-weight: 700; }
+.card p { font-size: 14px; color: var(--mist); }
+.num { font-family: var(--f-display); color: var(--mist); font-weight: 700; font-size: 14px; letter-spacing: .04em; }
+
+/* ---------- closing ---------- */
+.closing { padding-block: 64px 72px; }
+.closing-card {
+  position: relative; overflow: hidden;
+  border-radius: 32px; background: var(--potion); color: var(--night);
+  padding-block: clamp(32px, 6vw, 64px); padding-inline: clamp(20px, 5vw, 64px);
+  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 32px; align-items: center;
+}
+.closing-card h2 { font-size: clamp(34px, 5.4vw, 60px); font-weight: 800; }
+.closing-card p { font-size: 17px; max-width: 32em; margin-top: 14px; }
+.closing-card ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; font-weight: 600; }
+.closing-card li { display: flex; gap: 10px; align-items: start; }
+.closing-card li svg { flex: none; margin-top: 4px; }
+.closing-actions { display: grid; gap: 14px; justify-items: start; }
+.price { display: grid; gap: 2px; }
+.price small { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.price strong { font-family: var(--f-display); font-weight: 800; font-size: clamp(44px, 6vw, 60px); line-height: 1; font-variant-numeric: tabular-nums; }
+.price span { font-size: 15px; font-weight: 600; }
+.hero-price { font-size: 15px; color: var(--mist); }
+.hero-price b { color: var(--amber); font-family: var(--f-display); font-size: 22px; font-weight: 800; }
+.btn.dark { background: var(--night); color: var(--potion); box-shadow: 0 6px 0 color-mix(in srgb, var(--night) 60%, var(--potion)); }
+.wa-num { font-size: 14px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.wa-num code { font-family: var(--f-body); font-weight: 800; font-size: 16px; user-select: all; }
+.copy {
+  font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; border-radius: 999px;
+  border: 2px solid var(--night); background: transparent; color: var(--night); padding: 3px 12px;
+}
+.cauldron { position: absolute; right: -30px; bottom: -40px; opacity: .14; pointer-events: none; }
+
+footer { padding-block: 24px 40px; color: var(--mist); font-size: 13px; text-align: center; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 8px 40px; }
+  .phone { width: min(100%, 300px); }
+  .stamp { right: -6px; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
+  .card.wide { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .card.wide h3 { font-size: 22px; }
+  .card h3 { font-size: 18px; }
+  .card:not(.wide):last-child { grid-column: 1 / -1; width: calc(50% - 7px); justify-self: center; }
+  .play span { width: 52px; height: 52px; }
+  .closing-card { grid-template-columns: minmax(0, 1fr); }
+  .btn { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .play span { transition: none; }
+}
+</style>
+
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+
+<header class="wrap top">
+  <div class="brand">
+    <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M8 13h16l-1.5 11a5 5 0 0 1-5 4.3h-3a5 5 0 0 1-5-4.3z" fill="#b8f25a"/>
+      <rect x="6" y="11" width="20" height="4" rx="2" fill="#f6f1ff"/>
+      <circle cx="13" cy="6" r="2.2" fill="#ffc94a"/><circle cx="19" cy="3.5" r="1.5" fill="#c3b6ea"/><circle cx="18" cy="8" r="1.3" fill="#b8f25a"/>
+    </svg>
+    Ramuan Animasi AI
+  </div>
+  <a class="mini-cta" href="#gabung" data-wa>Gabung Kelas</a>
+</header>
+
+<main>
+  <!-- ===== Video 01: promo ===== -->
+  <section class="wrap hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <span class="eyebrow">Kelas Pendampingan Virtual · Premium</span>
+      <h1 id="hero-title">Nggak bisa ngedit? Bikin video animasi <span class="brew">cuma 3 langkah.</span></h1>
+      <p class="lede">Siapkan <strong>ramuan khusus</strong>, masukkan <strong>prompt</strong>, lalu tunggu AI merender. Semua video di halaman ini dibuat dengan ramuan yang sama, mulai dari animasi kartun dan 3D sampai penampang konstruksi dan ilustrasi gravir.</p>
+      <div class="cta-row">
+        <a class="btn" href="#gabung" data-wa>
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.4-.5-1-1.7-1-2.8s.6-1.8.9-2 .5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.3.3-.1.6a8.5 8.5 0 0 0 1.6 2 7.7 7.7 0 0 0 2.3 1.4c.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3a2.3 2.3 0 0 1-.1 1.3Z"/></svg>
+          Gabung Kelas
+        </a>
+        <a class="btn ghost" href="#hasil">Lihat 10 hasil render</a>
+      </div>
+      <p class="hero-price">Cukup <b>Rp199.000</b>, sekali bayar untuk akses seumur hidup dan grup pendampingan.</p>
+    </div>
+    <figure style="margin:0; justify-self:center; width:100%; display:grid; justify-items:center;">
+      <div class="phone">
+        <span class="stamp">PROMO</span>
+        <div class="screen" style="border-radius:26px; box-shadow:none;">
+          <video src="v/lv1118.mp4" poster="p/lv1118.jpg" preload="metadata" playsinline controls aria-label="Video promosi: Bikin video animasi cuma 3 langkah"></video>
+        </div>
+      </div>
+      <figcaption class="vid-label"><b>Video 01 · Resep Ajaib Bikin Video Animasi</b> · 0:47</figcaption>
+    </figure>
+  </section>
+
+  <!-- ===== Recipe ===== -->
+  <section class="wrap" aria-labelledby="recipe-title">
+    <div class="recipe">
+      <div>
+        <span class="eyebrow">Resep ajaib</span>
+        <h2 id="recipe-title">Cara kerjanya</h2>
+      </div>
+      <ol class="steps">
+        <li><span class="n">1</span><div><h3>Ramuan</h3><p>Pakai ramuan khusus yang sudah diracik untuk tiap gaya animasi.</p></div></li>
+        <li><span class="n">2</span><div><h3>Prompt</h3><p>Tulis permintaan dengan bahasa sehari-hari, misalnya "buatkan animasi Bumi dan Bulan untuk pelajar SMP".</p></div></li>
+        <li><span class="n">3</span><div><h3>Tunggu</h3><p>AI merender videonya lengkap dengan suara dan subtitle, siap diunggah ke Reels, TikTok, atau Shorts.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Gallery ===== -->
+  <section class="wrap gallery" id="hasil" aria-labelledby="hasil-title">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Hasil render</span>
+        <h2 id="hasil-title">Dibuat dengan ramuan yang sama</h2>
+      </div>
+      <p>Ketuk video untuk memutar. Semua video dibuat lewat prompt, tanpa membuka aplikasi edit.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- ===== Closing CTA ===== -->
+  <section class="wrap closing" id="gabung" aria-labelledby="gabung-title">
+    <div class="closing-card">
+      <svg class="cauldron" width="320" height="320" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M5 13h22l-2 11a6 6 0 0 1-6 5h-6a6 6 0 0 1-6-5z" fill="#1d1440"/><rect x="3" y="10" width="26" height="5" rx="2.5" fill="#1d1440"/>
+      </svg>
+      <div>
+        <h2 id="gabung-title">Yuk, gabung sekarang!</h2>
+        <p>Ikuti Kelas Pendampingan Virtual dan buat video animasi seperti di atas untuk konten, materi ajar, atau promosi usaha Anda.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#1d1440" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Akses seumur hidup ke ramuan khusus untuk berbagai gaya animasi</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#1d1440" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Masuk grup pendampingan, dibimbing langkah demi langkah</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#1d1440" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Hasil video siap pakai, lengkap suara dan subtitle</li>
+        </ul>
+      </div>
+      <div class="closing-actions">
+        <div class="price"><small>Harga kelas</small><strong>Rp199.000</strong><span>Sekali bayar · akses seumur hidup</span></div>
+        <a class="btn dark" id="wa-btn" href="#gabung" data-wa>
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.4-.5-1-1.7-1-2.8s.6-1.8.9-2 .5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.3.3-.1.6a8.5 8.5 0 0 0 1.6 2 7.7 7.7 0 0 0 2.3 1.4c.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3a2.3 2.3 0 0 1-.1 1.3Z"/></svg>
+          Chat via WhatsApp
+        </a>
+        <div class="wa-num" id="wa-num">WhatsApp: <code id="wa-text">nomor segera diisi</code> <button class="copy" id="copy" type="button">Salin</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">Semua video animasi dibuat dengan Ramuan Animasi AI · Kanal Cak Rachmad</footer>
+
+<script>
+/* ---- Contact: put the WhatsApp number here (format 62xxxxxxxxxx) ---- */
+const WA_NUMBER = "6282244779898";
+const WA_MESSAGE = "Halo, saya mau gabung Kelas Pendampingan Virtual Ramuan Animasi AI (Rp199.000, akses seumur hidup + grup pendampingan). Bagaimana cara daftarnya?";
+
+const VIDEOS = [
+  { f: "promo",        t: "Bumi & Bulan untuk Pelajar SMP",       s: "Animasi 2D edukasi", d: "1:07", x: "Siang-malam, fase Bulan, sampai Bumi mengelilingi Matahari.", wide: true },
+  { f: "selsurya",     t: "Cara Kerja Sel Surya",                s: "3D render",          d: "1:14", x: "Dari foton cahaya Matahari sampai jadi listrik di rumah." },
+  { f: "gwk",          t: "Cara Membangun Patung GWK",           s: "Penampang konstruksi", d: "1:07", x: "Setinggi 121 meter, dirakit dari 754 keping." },
+  { f: "suramadu",     t: "Cara Membangun Jembatan Suramadu",    s: "Penampang konstruksi", d: "1:23", x: "Pipa baja ditancapkan ke dasar laut, lalu lantai dipasang sepotong-sepotong." },
+  { f: "fotosintesis", t: "Fotosintesis",                        s: "Kartun flat",        d: "1:05", x: "Cara tumbuhan memasak makanannya sendiri dari cahaya." },
+  { f: "segitiga",     t: "Waspada Penipuan Segitiga",           s: "3D low-poly",        d: "1:41", x: "Modus jual-beli motor online yang menjebak dua pihak sekaligus." },
+  { f: "lv1106",       t: "PPPK Paruh Waktu Jadi Penuh Waktu",   s: "Editorial berita",   d: "1:25", x: "Info ASN 2027 dalam gaya kartu berita." },
+  { f: "lv1104a",      t: "Belajar Pecahan Pakai Pizza",         s: "Kartun flat",        d: "0:41", x: "Pembilang dan penyebut, dijelaskan sambil berbagi pizza." },
+  { f: "lv1104b",      t: "Kota Kita: Dari Polusi ke Kota Hijau", s: "Kartun flat",       d: "1:05", x: "Cerita perjalanan waktu tentang menjaga lingkungan." },
+  { f: "menak",        t: "Legenda Menak Sopal",                 s: "Ilustrasi gravir",   d: "1:31", x: "Kisah rakyat Trenggalek tentang kemarau dan bendungan." },
+];
+
+const grid = document.getElementById("grid");
+const playIcon = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>';
+VIDEOS.forEach((v, i) => {
+  const n = String(i + 2).padStart(2, "0");
+  const card = document.createElement("article");
+  card.className = "card" + (v.wide ? " wide" : "");
+  card.innerHTML = `
+    <div class="screen">
+      <video src="v/${v.f}.mp4" poster="p/${v.f}.jpg" preload="none" playsinline aria-label="${v.t}"></video>
+      <button class="play" type="button" aria-label="Putar video: ${v.t}"><span>${playIcon}</span><em class="dur" style="font-style:normal">${v.d}</em></button>
+    </div>
+    <div class="meta">
+      <span class="num">Video ${n}</span>
+      <h3>${v.t}</h3>
+      <span class="chip">${v.s}</span>
+      <p>${v.x}</p>
+    </div>`;
+  grid.appendChild(card);
+});
+
+/* play / pause: only one video at a time */
+const allVideos = () => document.querySelectorAll("video");
+document.querySelectorAll(".play").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const screen = btn.closest(".screen");
+    const vid = screen.querySelector("video");
+    screen.classList.add("playing");
+    vid.controls = true;
+    vid.play().catch(() => {});
+  });
+});
+document.addEventListener("play", e => {
+  allVideos().forEach(v => { if (v !== e.target) v.pause(); });
+}, true);
+
+/* WhatsApp contact */
+const waBtn = document.getElementById("wa-btn");
+const waText = document.getElementById("wa-text");
+if (WA_NUMBER) {
+  const href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(WA_MESSAGE);
+  document.querySelectorAll("[data-wa]").forEach(a => { a.href = href; a.target = "_blank"; a.rel = "noopener"; });
+  waText.textContent = "+" + WA_NUMBER.replace(/^(\d{2})(\d{3})(\d{4})(\d+)$/, "$1 $2-$3-$4");
+}
+document.getElementById("copy").addEventListener("click", async (e) => {
+  const b = e.currentTarget;
+  try { await navigator.clipboard.writeText(waText.textContent); b.textContent = "Tersalin"; }
+  catch { const r = document.createRange(); r.selectNodeContents(waText); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  setTimeout(() => (b.textContent = "Salin"), 1800);
+});
+</script>
+
+</body>
+</html>
